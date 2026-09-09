@@ -14,8 +14,8 @@ Boss of the SOC (BOTS) is a security investigation challenge created by Splunk. 
 
 For this project, I am focusing on BOTS v1, specifically:
 
-**Scenario-1** ()  
-**Scenario 2** ()  
+**Scenario-1** (WebSite Defacement)  
+**Scenario 2** (Ransomware)  
 
 https://bots.splunk.com/#play-now  
 
