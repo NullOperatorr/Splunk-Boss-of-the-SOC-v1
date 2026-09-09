@@ -22,7 +22,6 @@ Rather than documenting only the final answers, this project focuses on the inve
 The objective is to demonstrate how Splunk can be used to:
 
 - Search and analyze security events.
-- Identify relevant data sources and fields.
 - Develop and refine SPL queries.
 - Correlate events and indicators.
 - Investigate suspicious activity.
