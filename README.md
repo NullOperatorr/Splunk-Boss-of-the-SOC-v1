@@ -1,8 +1,9 @@
 # Splunk-Boss-of-the-SOC
 CyberLab-16
 
-
+<p align="center">
 <img width="401" height="492" alt="image" src="https://github.com/user-attachments/assets/4745044b-2442-4aa2-9537-64391e16328b" />
+</p>
 
 
 ## Project Overview
