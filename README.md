@@ -17,7 +17,8 @@ For this project, I am focusing on BOTS v1, specifically:
 **Scenario-1** ()  
 **Scenario 2** ()  
 
-https://bots.splunk.com/event/3oQ7sqI5bajOCP43o0svqT/detail
+https://bots.splunk.com/#play-now  
+
 
 Rather than documenting only the final answers, this project focuses on the investigation process behind each finding.
 
