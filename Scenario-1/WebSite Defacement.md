@@ -236,10 +236,7 @@ How many unique passwords were attempted in the brute force attempt?
 ## Conclusion:
 
 
----
 
-
-## Lessons Learned:
 
 
 
