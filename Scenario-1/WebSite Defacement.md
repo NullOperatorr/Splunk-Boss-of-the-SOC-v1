@@ -105,6 +105,16 @@ prankglassinebracket.jumpingcrab.com
 **Analysis:**
 
 
+- We will use the URI identified in the previous question to continue.
+  
+```bash
+index="botsv1"  src_ip="192.168.250.70" sourcetype="stream:http" uri="/poisonivy-is-coming-for-you-batman.jpeg"
+```
+
+- The search returns only **two events**. After inspecting these events, we can identify the **(FQDN)** associated with the activity.
+
+  <img width="948" height="899" alt="image" src="https://github.com/user-attachments/assets/4725a763-8c3a-4224-b73f-73f81b945614" />
+
 
 ---
 
