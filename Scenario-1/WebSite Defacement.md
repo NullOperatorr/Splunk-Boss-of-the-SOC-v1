@@ -145,7 +145,7 @@ What IPv4 address is likely attempting a brute force password attack against imr
 
 **Analysis:**    
 
-- We will search with the webserver as the destination while the brute force is a post request, so we will filter by it and the from_data to see the user&passwd output.
+- We will search with the webserver as the destination while the brute force is a post request, so we will filter by it and the form_data to see the user&passwd output.
 
   
 ```bash
