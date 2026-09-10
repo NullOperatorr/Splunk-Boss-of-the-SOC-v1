@@ -193,12 +193,13 @@ AAE3F5A29935E6ABCC2C2754D12A9AF0
 * We first searched for `3791.exe`.
 * We then applied the `sysmon` source filter to narrow the results to Sysmon events.
 * Next, we filtered by `EventID=1`, which represents **process creation** events.
-* The search returned **69 events**. By further filtering the `cmdline` field, we identified the execution of `3791.exe` and retrieved its **MD5 hash**.
+* The search returned **5 events**. By further filtering the `cmdline` field, we identified the execution of `3791.exe` and retrieved its **MD5 hash**.
 
 ```bash
 index="botsv1"  3791.exe source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventID=1 cmdline="3791.exe"
 ```
 
+<img width="1232" height="421" alt="image" src="https://github.com/user-attachments/assets/67f68cf2-35a8-4d09-bf76-87e5f24d2337" />
 <img width="1884" height="766" alt="image" src="https://github.com/user-attachments/assets/51599343-089b-48ce-8043-135b0659ed51" />
 
 ---
