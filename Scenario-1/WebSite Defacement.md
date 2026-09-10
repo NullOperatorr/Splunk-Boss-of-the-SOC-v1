@@ -11,8 +11,15 @@ What is the likely IPv4 address of someone from the Po1s0n1vy group scanning imr
 ```bash
 40.80.148.42
 ```
-**Analysis:**
+**Analysis:**  
 
+```bash
+index="botsv1" imreallynotbatman.com
+```
+<img width="720" height="354" alt="image" src="https://github.com/user-attachments/assets/1114c67e-da69-40fa-a3b5-84676c291c4e" />
+
+- Searching for `imreallynotbatman.com` revealed three source IP addresses (SRC_IPs). One of the addresses was private so excluded from further analysis.
+- The remaining two were public IP addresses. Based on the observed request/traffic volume, we will go with the public IP address generating the highest amount of traffic.
 
 ---
 
