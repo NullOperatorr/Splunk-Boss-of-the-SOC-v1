@@ -128,6 +128,10 @@ What IPv4 address has Po1s0n1vy tied to domains that are pre-staged to attack Wa
 
 **Analysis:**
 
+- From the previous Question we can find the IP-Address easily.  
+
+<img width="1338" height="981" alt="image" src="https://github.com/user-attachments/assets/1f542865-6f47-4e4a-acca-46c7274a2812" />
+
 
 ---
 
@@ -139,10 +143,20 @@ What IPv4 address is likely attempting a brute force password attack against imr
 23.22.63.114
 ```
 
-**Analysis:**
+**Analysis:**    
+
+- We will search with the webserver as the destination while the brute force is a post request, so we will filter by it and the from_data to see the user&passwd output.
+
+  
+```bash
+index="botsv1"  dest_ip="192.168.250.70" sourcetype="stream:http" http_method=POST
+| table  src_ip, form_data, uri
+```
+<img width="1872" height="876" alt="image" src="https://github.com/user-attachments/assets/539e24ee-56f5-44c3-b7c6-16454127eef4" />
 
 
 ---
+
 
 ## #109  
 
