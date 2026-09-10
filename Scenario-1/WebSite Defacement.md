@@ -251,6 +251,17 @@ What was the first brute force password used?
 
 **Analysis:**
 
+-  This query is used to **extract passwords from the `form_data` field** identified from the URI, with the results sorted in **reverse  order** for analysis.
+
+```bash
+index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri=/joomla/Administrator/index.php
+| rex field=form_data "passwd=(?<password>\w+)"
+| sort _time
+| table  _time src_ip password
+```
+
+<img width="1877" height="399" alt="image" src="https://github.com/user-attachments/assets/dd0ab15a-d839-4575-9d88-e07c62fd8175" />
+
 ---
 
 ## #115  
@@ -263,6 +274,19 @@ Yellow
 ```
 
 **Analysis:**
+
+- First lets search for “Coldplay” songs that are six-character.  
+**(Yellow, Violet, Trouble, Sparks, Shiver, Clocks, Square, Always, Ghosts)**  
+
+- With the below SPL query we will try one by one from this list.  
+
+```bash
+index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri="/joomla/Administrator/index.php"
+| search form_data="*WORD*"
+| sort _time
+| table _time src_ip form_data
+```
+<img width="1836" height="348" alt="image" src="https://github.com/user-attachments/assets/6f8fa812-0503-4290-b06c-b54231d1dead" />
 
 
 ---
@@ -324,7 +348,6 @@ How many unique passwords were attempted in the brute force attempt?
 
 ---
 
-## Conclusion:
 
 
 
