@@ -169,6 +169,14 @@ Answer guidance: Please include file extension. (For example, "notepad.exe" or "
 
 **Analysis:**
 
+- As file is uploaded so the webserver will be the destination and will be a post request to the server then search with (*.exe).
+- The output will only be 3 events and by examining them you will easily find the .exe file.
+
+```bash
+index="botsv1"  dest_ip="192.168.250.70" sourcetype="stream:http" http_method=POST *.exe
+```
+
+<img width="1531" height="382" alt="image" src="https://github.com/user-attachments/assets/142fd886-0795-46e2-a3fe-ff87b9e6f59b" />
 
 ---
 
@@ -182,6 +190,16 @@ AAE3F5A29935E6ABCC2C2754D12A9AF0
 
 **Analysis:**
 
+* We first searched for `3791.exe`.
+* We then applied the `sysmon` source filter to narrow the results to Sysmon events.
+* Next, we filtered by `EventID=1`, which represents **process creation** events.
+* The search returned **69 events**. By further filtering the `cmdline` field, we identified the execution of `3791.exe` and retrieved its **MD5 hash**.
+
+```bash
+index="botsv1"  3791.exe source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventID=1 cmdline="3791.exe"
+```
+
+<img width="1884" height="766" alt="image" src="https://github.com/user-attachments/assets/51599343-089b-48ce-8043-135b0659ed51" />
 
 ---
 
