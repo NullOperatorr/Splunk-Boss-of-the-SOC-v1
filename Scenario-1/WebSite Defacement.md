@@ -31,9 +31,15 @@ What company created the web vulnerability scanner used by Po1s0n1vy? Type the c
 Acunetix
 ```
 
-**Analysis:**
+**Analysis:**  
 
+```bash
+index="botsv1"  src_ip="40.80.148.42" source="stream:http" imreallynotbatman.com
+```
 
+<img width="1320" height="784" alt="image" src="https://github.com/user-attachments/assets/bdd39ff2-94da-4a99-b64c-0a2c563e779d" />
+
+- When looking in the events one by one you will found `Acunetix Web Vulnerability Scanner - Free Edition` alot.
 
 ---
 
@@ -45,8 +51,10 @@ What content management system is imreallynotbatman.com likely using?
 joomla
 ```
 
+**Analysis:**  
+<img width="1320" height="784" alt="image" src="https://github.com/user-attachments/assets/8d574dad-682a-4c4b-a320-4356b184bb29" />
 
-**Analysis:**
+- Additionally, within the same event, we identified the **management system being used**.
 
 ---
 
@@ -58,8 +66,31 @@ What is the name of the file that defaced the imreallynotbatman.com website? Ple
 poisonivy-is-coming-for-you-batman.jpeg
 ```
 
-
 **Analysis:**
+
+- Since the file is hosted on the web server, we will search using the **server's IP address** so, our first step is to identify the web server's IP address. (192.168.250.70)  
+
+```bash
+index="botsv1" imreallynotbatman.com src_ip="40.80.148.42"
+```
+
+<img width="779" height="322" alt="image" src="https://github.com/user-attachments/assets/690fa01e-def5-43cf-837d-e2d711a5a1a0" /> 
+
+
+- We are looking for a **malicious file that was downloaded**. By filtering for `stream:http` as the source type and using the victim's IP address as the source IP, we can narrow the search to HTTP traffic.  
+
+```bash
+index="botsv1"  src_ip="192.168.250.70" sourcetype="stream:http"
+```
+
+<img width="763" height="171" alt="image" src="https://github.com/user-attachments/assets/21cdc90a-78f0-4e76-9f58-994be54a8c00" />
+<img width="617" height="365" alt="image" src="https://github.com/user-attachments/assets/23dc29da-0a8e-49cb-bdad-91720bbd0a29" />
+
+- The search returns only **8 events**. Examining the `uri`, `uri_path`, and `url` fields reveals the same result across the events, making it easier to identify the requested resource.
+- We can also search the **src_headers**, since the file download request uses the HTTP `GET` method.
+
+
+
 
 ---
 
