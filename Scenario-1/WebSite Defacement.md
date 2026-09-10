@@ -16,7 +16,7 @@ What is the likely IPv4 address of someone from the Po1s0n1vy group scanning imr
 
 ## #102  
 
-What company created the web vulnerability scanner used by Po1s0n1vy? Type the company name.
+What company created the web vulnerability scanner used by Po1s0n1vy? Type the company name.  
 **Answer:**  
 ```bash
 Acunetix
