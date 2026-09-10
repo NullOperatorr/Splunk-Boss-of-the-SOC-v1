@@ -168,11 +168,5 @@ steganography
 ## Conclusion:
 
 
----
-
-
-## Lessons Learned:
-
-
 
 
