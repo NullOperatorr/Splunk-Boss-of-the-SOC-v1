@@ -11,6 +11,8 @@ What is the likely IPv4 address of someone from the Po1s0n1vy group scanning imr
 ```bash
 40.80.148.42
 ```
+**Analysis:**
+
 
 ---
 
@@ -22,6 +24,10 @@ What company created the web vulnerability scanner used by Po1s0n1vy? Type the c
 Acunetix
 ```
 
+**Analysis:**
+
+
+
 ---
 
 ## #103 
@@ -31,6 +37,9 @@ What content management system is imreallynotbatman.com likely using?
 ```bash
 joomla
 ```
+
+
+**Analysis:**
 
 ---
 
@@ -42,6 +51,9 @@ What is the name of the file that defaced the imreallynotbatman.com website? Ple
 poisonivy-is-coming-for-you-batman.jpeg
 ```
 
+
+**Analysis:**
+
 ---
 
 ## #105  
@@ -51,6 +63,11 @@ This attack used dynamic DNS to resolve to the malicious IP. What fully qualifie
 ```bash
 prankglassinebracket.jumpingcrab.com
 ```
+
+**Analysis:**
+
+
+
 ---
 
 ## #106  
@@ -61,6 +78,9 @@ What IPv4 address has Po1s0n1vy tied to domains that are pre-staged to attack Wa
 23.22.63.114
 ```
 
+**Analysis:**
+
+
 ---
 
 ## #108  
@@ -70,6 +90,10 @@ What IPv4 address is likely attempting a brute force password attack against imr
 ```bash
 23.22.63.114
 ```
+
+**Analysis:**
+
+
 ---
 
 ## #109  
@@ -81,6 +105,9 @@ Answer guidance: Please include file extension. (For example, "notepad.exe" or "
 3791.exe
 ```
 
+**Analysis:**
+
+
 ---
 
 ## #110  
@@ -91,6 +118,9 @@ What is the MD5 hash of the executable uploaded?
 AAE3F5A29935E6ABCC2C2754D12A9AF0
 ```
 
+**Analysis:**
+
+
 ---
 
 ## #111  
@@ -100,6 +130,8 @@ GCPD reported that common TTPs (Tactics, Techniques, Procedures) for the Po1s0n1
 ```bash
 9709473ab351387aab9e816eff3910b9f28a7a70202e250ed46dba8f820f34a8
 ```
+
+**Analysis:**
 
 ---
 
@@ -112,6 +144,9 @@ Answer guidance: It's not in Splunk!!
 53 74 65 76 65 20 42 72 61 6e 74 27 73 20 42 65 61 72 64 20 69 73 20 61 20 70 6f 77 65 72 66 75 6c 20 74 68 69 6e 67 2e 20 46 69 6e 64 20 74 68 69 73 20 6d 65 73 73 61 67 65 20 61 6e 64 20 61 73 6b 20 68 69 6d 20 74 6f 20 62 75 79 20 79 6f 75 20 61 20 62 65 65 72 21 21 21
 ```
 
+**Analysis:**
+
+
 ---
 
 ## #114  
@@ -121,6 +156,9 @@ What was the first brute force password used?
 ```bash
 12345678
 ```
+
+
+**Analysis:**
 
 ---
 
@@ -133,6 +171,9 @@ One of the passwords in the brute force attack is James Brodsky's favorite Coldp
 Yellow
 ```
 
+**Analysis:**
+
+
 ---
 
 ## #116  
@@ -142,6 +183,8 @@ What was the correct password for admin access to the content management system 
 ```bash
 batman
 ```
+
+**Analysis:**
 
 
 ---
@@ -155,6 +198,9 @@ Answer guidance: Round to closest whole integer. For example "5" not "5.23213"
 6
 ```
 
+**Analysis:**
+
+
 ---
 
 ## #118  
@@ -167,6 +213,11 @@ Answer guidance: Round to 2 decimal places.
 92.17
 ```
 
+**Analysis:**
+
+
+
+
 ---
 
 ## #119  
@@ -177,7 +228,18 @@ How many unique passwords were attempted in the brute force attempt?
 412
 ```
 
+**Analysis:**
+
+
 ---
+
+## Conclusion:
+
+
+---
+
+
+## Lessons Learned:
 
 
 
