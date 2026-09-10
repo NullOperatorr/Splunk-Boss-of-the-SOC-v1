@@ -214,6 +214,11 @@ GCPD reported that common TTPs (Tactics, Techniques, Procedures) for the Po1s0n1
 
 **Analysis:**
 
+- We will use **VirusTotal** to search for the attacker IP address and determine whether it is associated with any **known malicious activity or malware**.
+
+<img width="1325" height="792" alt="image" src="https://github.com/user-attachments/assets/0766c963-a36f-4fe4-a732-08703caa26e5" />
+<img width="1557" height="812" alt="image" src="https://github.com/user-attachments/assets/2f91481c-16c9-4404-b15e-3bb7992f95fc" />
+
 ---
 
 ## #112  
@@ -226,6 +231,11 @@ Answer guidance: It's not in Splunk!!
 ```
 
 **Analysis:**
+
+- The solution by the community on virus total.
+
+  
+<img width="1822" height="240" alt="image" src="https://github.com/user-attachments/assets/f7c4d8e1-5038-4cf8-bc89-a9c62445c482" />
 
 
 ---
