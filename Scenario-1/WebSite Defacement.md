@@ -303,7 +303,7 @@ batman
 
 - The correct password must be with status code 200.
 
-  ```bash
+```bash
 index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri=/joomla/Administrator/index.php
 | rex field=form_data "passwd=(?<password>\w+)"
 | stats count by password
