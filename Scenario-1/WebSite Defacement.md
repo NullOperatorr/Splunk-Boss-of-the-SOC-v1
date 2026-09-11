@@ -301,37 +301,44 @@ batman
 
 **Analysis:**
 
+- The correct password must be with status code 200.
+
+  ```bash
+index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri=/joomla/Administrator/index.php
+| rex field=form_data "passwd=(?<password>\w+)"
+| stats count by password
+| sort -count
+```
+
 
 ---
 
 ## #117  
 
-What was the average password length used in the password brute forcing attempt?  
-Answer guidance: Round to closest whole integer. For example "5" not "5.23213"  
+What was the average password length used in the password brute forcing attempt?    
+Answer guidance: Round to closest whole integer. For example "5" not "5.23213"
 **Answer:**  
+  
 ```bash
 6
 ```
 
 **Analysis:**
 
+- `eval length = len(password)` returns the length of the retrieved password and stores it in the length variable.
+- `stats avg(length) as avglength` gets the average length of the value stored in the variable length and save it as “avglength”
+- `eval rounded = round(avglength,0)` round the values in the “avglength” close to whole integer.
 
----
-
-## #118  
+<img width="1896" height="422" alt="image" src="https://github.com/user-attachments/assets/63a8c661-20e8-4696-8aa4-15d8471a8f5c" />
 
 
-How many seconds elapsed between the time the brute force password scan identified the correct password and the compromised login?  
-Answer guidance: Round to 2 decimal places.  
-**Answer:**  
 ```bash
-92.17
+index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri=/joomla/Administrator/index.php
+| rex field=form_data "passwd=(?<password>\w+)"
+| eval length = len(password)
+| stats avg(length) as avglength
+| eval rounded = round(avglength,0)
 ```
-
-**Analysis:**
-
-
-
 
 ---
 
@@ -345,6 +352,14 @@ How many unique passwords were attempted in the brute force attempt?
 
 **Analysis:**
 
+- We can refer to **#116** as the wrong password will be with status code different than 200. 
+
+```bash
+index=botsv1 sourcetype=stream:http src_ip=23.22.63.114 dest_ip="192.168.250.70" http_method=POST uri=/joomla/Administrator/index.php
+```
+
+
+<img width="644" height="366" alt="image" src="https://github.com/user-attachments/assets/c1983d02-a975-40d3-b59f-2325bbe33166" />
 
 ---
 
