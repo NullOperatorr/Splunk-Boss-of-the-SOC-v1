@@ -15,8 +15,23 @@ What was the most likely IPv4 address of we8105desk on 24AUG2016?
 ```
 
 **Analysis:**
+- First search by `we8105desk` and change the time range to 24AUG2016.
 
+  ```bash
+  index="botsv1" we8105desk 
+  ```
 
+<img width="1904" height="481" alt="image" src="https://github.com/user-attachments/assets/f3d51670-1400-4ee3-8c52-8ec37d36f0b6" />
+
+- Then we will filter with the pc as the src then you will find its IP address easily.
+
+  ```bash
+  index="botsv1" we8105desk  src="we8105desk.waynecorpinc.local"
+  ```
+
+  <img width="1331" height="836" alt="image" src="https://github.com/user-attachments/assets/6ff7bfb0-ff6e-4109-b14c-1c18b3bef7da" />
+
+  
 ---
 
 ## #201   
