@@ -211,7 +211,7 @@ index=botsv1 host=we9041srv *.pdf
 
 <img width="720" height="531" alt="image" src="https://github.com/user-attachments/assets/0b218bb9-0a9d-4d38-ac1d-6ba081f8f0ce" />
 
-
+- “Relative_Target_Name” field contains the “pdf” files.  
 - The `dc` function of `stats` is used to **count the distinct values** in the identified field. This ensures that duplicate file entries are not counted multiple times.
 
 ```bash
