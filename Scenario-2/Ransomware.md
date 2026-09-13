@@ -276,6 +276,13 @@ mhtr.jpg
 
 **Analysis:**
 
+- Remember from Q.203 there was a suspicious domain ,so I used the same query while filtering with the suspicious domain then inspected the url or uri.
+
+  ```bash
+  index=botsv1 src_ip="192.168.250.100" source="stream:http" site="solidaritedeproximite.org"
+  ```
+  <img width="682" height="286" alt="image" src="https://github.com/user-attachments/assets/4981e987-1100-4ede-af0c-3ce76be24269" />
+
 
 ---
 
