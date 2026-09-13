@@ -45,7 +45,16 @@ Answer guidance: No punctuation, just 7 digits
 
 **Analysis:**
 
+- Filter by suricata and then search with cerber word.
 
+  ```bash
+  index="botsv1"   cerber sourcetype=suricata
+  ```
+
+<img width="871" height="341" alt="image" src="https://github.com/user-attachments/assets/342f757a-bdaf-4b02-a7b3-620efefc4704" />
+<img width="687" height="402" alt="image" src="https://github.com/user-attachments/assets/775b6822-f430-4f8e-b67f-e24769e9e5c7" />
+
+  
 
 ---
 
@@ -60,6 +69,16 @@ cerberhhyed5frqa.xmfir0.win
 
 **Analysis:**
 
+- We will search using `stream:dns`. Since the search may return a large number of DNS queries, we can reduce the noise by excluding common domains such as `arpa`, `microsoft`, and `msn.local`, while keeping the **primary device's IP address as the `src_ip`**.
+
+```bash
+index=botsv1 src_ip="192.168.250.100" source="stream:dns" NOT query=*.arpa AND NOT query=*.microsoft.com AND NOT query=*.msn.com AND NOT query=*.info AND NOT query=*.local AND query=*.*
+| table dest_ip _time query
+| sort by _time desc
+```
+
+<img width="1908" height="539" alt="image" src="https://github.com/user-attachments/assets/7351a24f-a6f5-42ed-9a88-54e3e89c4086" />
+
 ---
 
 ## #203    
@@ -72,6 +91,17 @@ solidaritedeproximite.org
 
 
 **Analysis:**
+
+- Change the stream to http and table to see site rquests.
+
+  
+```bash
+index=botsv1 src_ip="192.168.250.100" source="stream:http"
+| table site, _time
+```
+
+<img width="1745" height="507" alt="image" src="https://github.com/user-attachments/assets/85cca687-c054-4cdc-a0fc-2aa7a43a2f0d" />
+
 
 ---
 
@@ -86,6 +116,25 @@ Answer guidance: Enter the number of characters (i.e.the "length") of the field.
 
 **Analysis:**
 
+- We will search using the Sysmon source and specifically look for the execution of a VBScript (.vbs) script. By inspecting the cmdline field, we can identify the command used to execute the script
+
+```bash
+index=botsv1 sourcetype="xmlwineventlog:microsoft-windows-sysmon/operational" *.vbs 
+|  table CommandLine
+```
+
+<img width="1913" height="751" alt="image" src="https://github.com/user-attachments/assets/ad4170ca-b3a8-4d06-98f3-8b9a63b6b46d" />  
+
+- To determine the **number of characters** in a field, we can use the `eval` command with the `len()` function, which returns the character length of the specified field.
+
+```bash
+index=botsv1 sourcetype="xmlwineventlog:microsoft-windows-sysmon/operational" vbs
+| eval lencmd=len(CommandLine)
+| table _time CommandLine, lencmd
+| sort - lencmd
+```
+
+<img width="1926" height="738" alt="image" src="https://github.com/user-attachments/assets/a1621236-fb8c-4c7d-a32b-34e042452154" />
 
 
 ---
