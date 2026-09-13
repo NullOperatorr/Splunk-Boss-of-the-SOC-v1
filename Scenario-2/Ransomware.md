@@ -149,6 +149,19 @@ MIRANDA_PRI
 
 **Analysis:**
 
+- USB devices and related information are logged in Windows Registry. So when a USB is connected to a Windows device, certain details are recorded too. The USB device information can be found in the “SYSTEM\CurrentControlSet\Enum\USBSTOR” Registry key.
+
+- A friendly name is a human-readable name used to identify a device, application, file, certificate, or other IT asset instead of its technical identifier.
+
+  
+```bash
+index=botsv1 host=we8105desk sourcetype=WinRegistry friendlyname
+| table registry_value_data
+| dedup registry_value_data
+```
+
+<img width="1335" height="410" alt="image" src="https://github.com/user-attachments/assets/95ed831f-d341-4558-a559-07e83cc61353" />
+
 
 ---
 
