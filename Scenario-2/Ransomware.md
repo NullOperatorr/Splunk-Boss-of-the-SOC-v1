@@ -234,6 +234,13 @@ The VBscript found in question 204 launches 121214.tmp. What is the ParentProces
 
 **Analysis:**
 
+- Embrace your sysmon data. Search for a command issued by the infected device and use the ParentProcessId, and ParentCommandLine, to track down the parent process id of them all.  
+
+```bash
+index=botsv1 sourcetype="xmlwineventlog:microsoft-windows-sysmon/operational" vbs 121214.tmp
+```
+
+<img width="690" height="360" alt="image" src="https://github.com/user-attachments/assets/6f50438c-5c0e-40bb-9b41-57aa9ab170b2" />
 
 ---
 
@@ -246,6 +253,16 @@ The Cerber ransomware encrypts files located in Bob Smith's Windows profile. How
 ```
 
 **Analysis:**
+
+- Let's use the PC hostname of Bob smith as we identified before along with sysmon as sourcetype.  
+- Then query all text files within Bob Smith’s directory, using the filter “TargetFilename”.
+
+```bash
+index=botsv1 sourcetype="xmlwineventlog:microsoft-windows-sysmon/operational" host=we8105desk TargetFilename="C:\\Users\\bob.smith.WAYNECORPINC\\*.txt" 
+| stats dc(TargetFilename)
+```
+
+<img width="1195" height="372" alt="image" src="https://github.com/user-attachments/assets/15b49125-f6d7-4a45-be22-64030a7b6e3d" />
 
 ---
 
@@ -271,6 +288,8 @@ steganography
 ```
 
 **Analysis:**
+
+- The file has a `.jpg` extension, indicating that it is intended to be a JPEG image. However, **steganography** is a technique used to hide malicious or sensitive data inside an otherwise normal-looking file, such as an image. In this case, the JPG file was used to conceal **malicious content**.
 
 
 ---
