@@ -175,6 +175,12 @@ Bob Smith's workstation (we8105desk) was connected to a file server during the r
 
 **Analysis:**
 
+- There are Common protocols used for file transfers include **FTP, SMB, and HTTP**, so we will filter by one of them.
+
+```bash
+index="botsv1" src_ip=192.168.250.100 sourcetype="stream:smb"
+```
+<img width="1323" height="791" alt="image" src="https://github.com/user-attachments/assets/886e3f37-f422-4b36-a215-e031ade4c700" />
 
 ---
 
@@ -187,6 +193,33 @@ How many distinct PDFs did the ransomware encrypt on the remote file server?
 ```
 
 **Analysis:**
+
+- After identifying the **IP address of the file server**, we will investigate to determine the hostname .
+
+```bash
+index=botsv1 192.168.250.20
+```
+
+<img width="1899" height="480" alt="image" src="https://github.com/user-attachments/assets/f10a149a-7a72-472a-8265-e1b26b95ed9f" />
+
+
+- We will modify the query to filter for events from the host `we9041srv` and identify files with a **`.pdf` file extension**.
+
+```bash
+index=botsv1 host=we9041srv *.pdf
+```
+
+<img width="720" height="531" alt="image" src="https://github.com/user-attachments/assets/0b218bb9-0a9d-4d38-ac1d-6ba081f8f0ce" />
+
+
+- The `dc` function of `stats` is used to **count the distinct values** in the identified field. This ensures that duplicate file entries are not counted multiple times.
+
+```bash
+index=botsv1 host=we9041srv *.pdf
+| stats dc(Relative_Target_Name) 
+```
+
+<img width="641" height="334" alt="image" src="https://github.com/user-attachments/assets/b7ff1472-b1e2-4dc4-9ca3-1979b9237b7b" />
 
 
 ---
